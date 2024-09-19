@@ -1,0 +1,17 @@
+name: Feature Branch Workflow
+on:
+  push:
+    branches:
+      - 'feature/*'
+
+jobs:
+  example-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4.1.4
+        
+      - name: run unit test pre built
+        uses: mvn test
+
+#the `uses' attribute must be a path, a Docker image, or owner/repo@ref
